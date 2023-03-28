@@ -1,5 +1,7 @@
 package api
 
-const (
-	chatUrl = "https://api.openai.com/v1/chat/completions"
-)
+import "context"
+
+type OpenApi interface {
+	Chat(ctx context.Context, content string) (*ChatResult, error)
+}
